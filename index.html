@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7e9e9" />
+    <meta
+      name="description"
+      content="A premium luxury digital wedding invitation."
+    />
+    <title>Aditya & Priya — Wedding Invitation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Nunito:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div class="loader" id="loader">
+      <div class="loader-ring"></div>
+      <p>Preparing your invitation</p>
+    </div>
+
+    <!-- Floating controls -->
+    <div class="floating-controls">
+      <button class="control-btn" id="musicBtn" aria-label="Toggle music">
+        <span class="music-icon">♪</span>
+      </button>
+      <button class="control-btn" id="shareBtn" aria-label="Share invitation">
+        ↗
+      </button>
+    </div>
+
+    <audio id="weddingMusic" loop preload="auto">
+      <!-- Add your own file here: music/wedding.mp3 -->
+      <source
+        src="music/vidssave.com Chalray chalray wal female version .mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <!-- HERO -->
+    <header class="hero section-dark" id="home">
+      <div class="hero-image"></div>
+      <div class="hero-overlay"></div>
+      <div class="grain"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow light">TOGETHER WITH THEIR FAMILIES</p>
+        <p class="small-script light-script">We are getting married</p>
+
+        <h1>
+          <span>Aditya</span>
+          <i>&amp;</i>
+          <span>Priya</span>
+        </h1>
+
+        <div class="hero-line"></div>
+        <p class="hero-date">20 · 12 · 2026</p>
+        <p class="hero-place">Jaipur · Rajasthan</p>
+
+        <a href="#invitation" class="premium-btn light-btn">
+          <span>OPEN INVITATION</span>
+          <b>↓</b>
+        </a>
+      </div>
+
+      <div class="scroll-hint">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="scroll-line"></div>
+      </div>
+    </header>
+
+    <main>
+      <!-- INTRO -->
+      <section class="intro section" id="invitation">
+        <div class="floral floral-top">✦</div>
+        <div class="container narrow center reveal">
+          <p class="eyebrow">A BEAUTIFUL BEGINNING</p>
+          <p class="script-title">Two hearts, one beautiful story</p>
+          <h2>We invite you to celebrate<br /><em>our forever.</em></h2>
+          <p class="body-copy">
+            With joyful hearts and the blessings of our families, we are
+            delighted to invite you to be a part of the most beautiful chapter
+            of our lives.
+          </p>
+          <div class="ornament"><span>❦</span></div>
+        </div>
+      </section>
+
+      <!-- SCRATCH TO REVEAL -->
+      <section class="scratch-section section soft-cream" id="scratch">
+        <div class="container narrow">
+          <div class="section-heading center reveal">
+            <p class="eyebrow">A LITTLE SURPRISE</p>
+            <p class="script-title">Scratch to reveal</p>
+            <h2>There is a <em>secret</em> for you.</h2>
+            <p class="body-copy">
+              Use your finger or mouse to gently scratch the card and reveal
+              your special invitation.
+            </p>
+          </div>
+
+          <div class="scratch-wrap reveal">
+            <div class="scratch-card" id="scratchCard">
+              <div class="scratch-reveal">
+                <span class="scratch-mini">YOU ARE INVITED</span>
+                <h3>Aditya <small>&amp;</small> Priya</h3>
+                <div class="scratch-heart">♡</div>
+                <p>20 · 12 · 2026</p>
+                <span class="scratch-place">JAIPUR · RAJASTHAN</span>
+              </div>
+              <canvas
+                id="scratchCanvas"
+                aria-label="Scratch card. Scratch to reveal the invitation"
+              ></canvas>
+              <div class="scratch-hint" id="scratchHint">
+                <span>✦</span>
+                <strong>SCRATCH HERE</strong>
+                <small>Reveal your invitation</small>
+              </div>
+            </div>
+            <div class="scratch-progress">
+              <span id="scratchPercent">0%</span> revealed
+            </div>
+            <button
+              class="premium-btn dark-btn scratch-reset"
+              id="scratchReset"
+              type="button"
+            >
+              <span>RESET CARD</span><b>↻</b>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SAVE THE DATE -->
+      <section class="save-date section soft-pink">
+        <div class="container split">
+          <div class="save-copy reveal">
+            <p class="eyebrow">MARK YOUR CALENDAR</p>
+            <p class="script-title">Save the date</p>
+            <h2>20 <span>·</span> 12 <span>·</span> 2026</h2>
+            <p class="body-copy">
+              A day filled with love, laughter, music and memories. We would be
+              honoured to have you with us.
+            </p>
+            <div class="countdown" id="countdown">
+              <div><strong id="days">00</strong><span>Days</span></div>
+              <div><strong id="hours">00</strong><span>Hours</span></div>
+              <div><strong id="minutes">00</strong><span>Minutes</span></div>
+              <div><strong id="seconds">00</strong><span>Seconds</span></div>
+            </div>
+          </div>
+
+          <div class="date-card reveal">
+            <div class="date-card-inner">
+              <p>THE WEDDING OF</p>
+              <h3>Aditya <small>&amp;</small> Priya</h3>
+              <div class="heart">♡</div>
+              <p>TWENTIETH · DECEMBER<br />TWO THOUSAND TWENTY SIX</p>
+              <div class="date-card-line"></div>
+              <span>Save this beautiful day</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STORY -->
+      <section class="story section">
+        <div class="container">
+          <div class="section-heading center reveal">
+            <p class="eyebrow">OUR STORY</p>
+            <p class="script-title">From a moment to a lifetime</p>
+            <h2>And then, there was <em>us.</em></h2>
+          </div>
+
+          <div class="story-grid">
+            <div class="story-photo reveal">
+              <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+                alt="Wedding couple"
+              />
+              <div class="photo-frame"></div>
+            </div>
+
+            <div class="story-text reveal">
+              <span class="story-number">01</span>
+              <h3>It all started with a hello.</h3>
+              <p>
+                Some stories are written in books. Ours is written in little
+                moments, unexpected smiles and countless memories.
+              </p>
+              <p>
+                What began as a beautiful meeting slowly became a promise — to
+                choose each other, every single day.
+              </p>
+              <div class="signature">Aditya &amp; Priya</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTS -->
+      <section class="events section soft-cream" id="events">
+        <div class="container">
+          <div class="section-heading center reveal">
+            <p class="eyebrow">THE CELEBRATIONS</p>
+            <p class="script-title">A few beautiful moments</p>
+            <h2>Wedding <em>events</em></h2>
+          </div>
+
+          <div class="event-list">
+            <article class="event-card reveal">
+              <div class="event-number">01</div>
+              <div class="event-icon">✿</div>
+              <div class="event-info">
+                <p class="event-type">PRE-WEDDING</p>
+                <h3>Mehendi</h3>
+                <p class="event-date">18 December 2026 · 05:00 PM</p>
+                <p>Garden Lawn, Jaipur</p>
+              </div>
+              <div class="event-arrow">↗</div>
+            </article>
+
+            <article class="event-card reveal">
+              <div class="event-number">02</div>
+              <div class="event-icon">☼</div>
+              <div class="event-info">
+                <p class="event-type">CELEBRATION</p>
+                <h3>Haldi</h3>
+                <p class="event-date">19 December 2026 · 11:00 AM</p>
+                <p>Family Residence, Jaipur</p>
+              </div>
+              <div class="event-arrow">↗</div>
+            </article>
+
+            <article class="event-card featured reveal">
+              <div class="event-number">03</div>
+              <div class="event-icon">♢</div>
+              <div class="event-info">
+                <p class="event-type">THE MAIN CEREMONY</p>
+                <h3>Wedding</h3>
+                <p class="event-date">20 December 2026 · 07:00 PM</p>
+                <p>Royal Palace, Jaipur</p>
+              </div>
+              <div class="event-arrow">↗</div>
+            </article>
+
+            <article class="event-card reveal">
+              <div class="event-number">04</div>
+              <div class="event-icon">✦</div>
+              <div class="event-info">
+                <p class="event-type">DINNER &amp; DANCE</p>
+                <h3>Reception</h3>
+                <p class="event-date">21 December 2026 · 07:30 PM</p>
+                <p>Grand Ballroom, Jaipur</p>
+              </div>
+              <div class="event-arrow">↗</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTE -->
+      <section class="quote-section section-dark">
+        <div class="quote-bg"></div>
+        <div class="container center reveal">
+          <div class="quote-mark">“</div>
+          <blockquote>
+            The best thing to hold onto in life<br />
+            is each other.
+          </blockquote>
+          <p>— Audrey Hepburn</p>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+
+      <section class="scratch-section" id="surprise">
+        <div class="scratch-wrap">
+          <p class="scratch-eyebrow">A LITTLE SURPRISE</p>
+          <h2>Scratch to Reveal <span>Our Invitation</span> ✨</h2>
+          <p class="scratch-subtitle">
+            Scratch with your mouse or finger to reveal the special message.
+          </p>
+          <div class="scratch-card" id="scratchCard">
+            <div class="scratch-reveal">
+              <p>YOU ARE INVITED</p>
+              <h3>Aditya <i>&</i> Priya</h3>
+              <b>20 • DECEMBER • 2026</b><small>Jaipur, Rajasthan</small
+              ><strong>♥</strong>
+            </div>
+            <canvas id="scratchCanvas"></canvas>
+            <div class="scratch-hint" id="scratchHint">
+              <div>✦</div>
+              <b>SCRATCH HERE</b><small>Reveal the surprise</small>
+            </div>
+          </div>
+          <div class="scratch-progress"><span id="scratchBar"></span></div>
+          <p id="scratchPct">0% revealed</p>
+          <button id="scratchReset" type="button">↻ Reset Card</button>
+        </div>
+      </section>
+      <section class="gallery section" id="gallery">
+        <div class="container">
+          <div class="section-heading center reveal">
+            <p class="eyebrow">MOMENTS</p>
+            <p class="script-title">Love, captured</p>
+            <h2>A little glimpse of <em>our world.</em></h2>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-item tall reveal">
+              <img
+                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85"
+                alt="Wedding moment"
+              />
+            </div>
+            <div class="gallery-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=900&q=85"
+                alt="Wedding rings"
+              />
+            </div>
+            <div class="gallery-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85"
+                alt="Wedding celebration"
+              />
+            </div>
+            <div class="gallery-item wide reveal">
+              <img
+                src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1200&q=85"
+                alt="Wedding flowers"
+              />
+            </div>
+            <div class="gallery-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=900&q=85"
+                alt="Wedding couple"
+              />
+            </div>
+            <div class="gallery-item tall reveal">
+              <img
+                src="https://images.unsplash.com/photo-1519225468359-299651c4d9fa?auto=format&fit=crop&w=900&q=85"
+                alt="Wedding details"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VENUE -->
+      <section class="venue section soft-pink" id="venue">
+        <div class="container split venue-split">
+          <div class="venue-photo reveal">
+            <img
+              src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=85"
+              alt="Wedding venue"
+            />
+          </div>
+          <div class="venue-copy reveal">
+            <p class="eyebrow">WHERE TO JOIN US</p>
+            <p class="script-title">The venue</p>
+            <h2>Royal <em>Palace</em></h2>
+            <p class="body-copy">
+              A beautiful evening awaits in the heart of Jaipur, surrounded by
+              family, friends and endless celebration.
+            </p>
+            <div class="venue-details">
+              <span>📍 Royal Palace, Jaipur, Rajasthan</span>
+              <span>🕖 20 December · 07:00 PM</span>
+            </div>
+            <a
+              class="premium-btn dark-btn"
+              target="_blank"
+              href="https://www.google.com/maps/search/?api=1&query=Jaipur%20Rajasthan"
+            >
+              <span>GET DIRECTIONS</span><b>↗</b>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section class="rsvp section" id="rsvp">
+        <div class="container narrow">
+          <div class="section-heading center reveal">
+            <p class="eyebrow">YOUR PRESENCE MATTERS</p>
+            <p class="script-title">Will you join us?</p>
+            <h2>Please <em>RSVP.</em></h2>
+            <p class="body-copy">
+              Kindly let us know if you can make it. We can't wait to celebrate
+              with you.
+            </p>
+          </div>
+
+          <form class="rsvp-form reveal" id="rsvpForm">
+            <div class="form-group">
+              <label for="guestName">YOUR NAME</label>
+              <input
+                id="guestName"
+                name="guestName"
+                type="text"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>WILL YOU ATTEND?</label>
+              <div class="radio-grid">
+                <label class="choice">
+                  <input type="radio" name="attendance" value="yes" required />
+                  <span>Joyfully accepts</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="attendance" value="no" />
+                  <span>Regretfully declines</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="guests">NUMBER OF GUESTS</label>
+              <select id="guests" name="guests">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">A LITTLE NOTE <span>(OPTIONAL)</span></label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Leave a message for the couple..."
+              ></textarea>
+            </div>
+
+            <button class="premium-btn dark-btn submit-btn" type="submit">
+              <span>SEND MY RSVP</span><b>♡</b>
+            </button>
+
+            <p class="form-success" id="formSuccess">
+              Thank you! Your response has been received with love. ♡
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FINAL -->
+      <section class="final section-dark">
+        <div class="final-bg"></div>
+        <div class="container center reveal">
+          <p class="eyebrow light">WITH LOVE</p>
+          <p class="script-title light-script">We cannot wait to see you</p>
+          <h2>Aditya <span>&amp;</span> Priya</h2>
+          <p class="final-date">20 · 12 · 2026</p>
+          <div class="ornament light-ornament">❦</div>
+          <p class="thank-you">Thank you for being part of our story.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with <span>♥</span> for Aditya &amp; Priya</p>
+      <a href="#home">BACK TO TOP ↑</a>
+    </footer>
+
+    <!-- Gallery lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">×</button>
+      <img id="lightboxImage" src="" alt="Expanded wedding photo" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
